@@ -5,6 +5,7 @@
     <classes>
       <class name="com.testcases.LoginTest">
         <methods>
+          <include name="VerfiyInvalidData"/>
           <include name="Verifylogin"/>
           <include name="teardown"/>
           <include name="setup"/>
