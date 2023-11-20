@@ -36,20 +36,32 @@ public class Login_functionality extends Testbase {
 	
 	
 	
-	public Homepage Dologin() {
+	public HomePage Dologin() throws Throwable {
 		
 	username.sendKeys(props.getProperty("username"));	
 	password.sendKeys(props.getProperty("password"));
 	
 	loginbutton.click();
 	
-	return new Homepage();
+	return new HomePage();
+	}
 	
+		public void DoLoginWithExcel(String username2, String password2) {
+		// TODO Auto-generated method stub
+		username.sendKeys(props.getProperty("username"));	
+		password.sendKeys(props.getProperty("password"));
 		
+		loginbutton.click();
 	}
 
 
 
+	
+
+
+	
+
+
 }
 
 	
@@ -66,4 +78,4 @@ public class Login_functionality extends Testbase {
 	
 	
 	
-}
+
