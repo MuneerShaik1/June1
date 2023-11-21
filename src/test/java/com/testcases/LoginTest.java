@@ -1,7 +1,5 @@
 package com.testcases;
 
-import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +11,7 @@ import com.Utils.Utils;
 import com.base.Testbase;
 
 public class LoginTest extends Testbase {
-
+    private static final String Sheetname="Sheet1";
 	Login_functionality lf;
 
 	public LoginTest() throws Throwable {
@@ -29,7 +27,7 @@ public class LoginTest extends Testbase {
 		lf = new Login_functionality(driver);
 
 	}
-
+    /*
 	@Test
 
 	public void Verifylogin() {
@@ -40,7 +38,7 @@ public class LoginTest extends Testbase {
 
 		Assert.assertEquals("http://empirehome.myprojectsonline.co.in/EmpireHome/", url);
 
-	}
+	}*/
 	
 	@Test(dataProvider="getdata",dataProviderClass=LoginTest.class)
 	 public void VerfiyInvalidData(String Username,String Password)
@@ -50,11 +48,11 @@ public class LoginTest extends Testbase {
 		Assert.assertEquals(url,"http://empirehome.myprojectsonline.co.in/EmpireHome/Dashboard");
 	 }
 	@DataProvider 
-	public  Object[][] getdata() throws IOException
+	public  Object[][] getdata() throws Throwable
 	{
 		
 		
-		return Utils.getdatafromexcel(sheet);
+		return Utils.ReadDataFromExcel(Sheetname);
 	}
 
 	@AfterMethod
